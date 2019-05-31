@@ -102,7 +102,7 @@ Example Response:
 Contain the web app framework code and http routes
 
 ### service.py
-Contain methods for accessing, parsing, and searching the passwd/group files
+Contain functions for accessing, parsing, and searching the passwd/group files
 
 ### config.txt
 This file specifies the location of the passwd file and the group file
