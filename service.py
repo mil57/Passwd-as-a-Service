@@ -27,8 +27,6 @@ def load_paths():
         # Error message
         print("Config file is missing or malformed! See README for example of config.txt")
         pass_path = group_path = None
-    finally:
-        config.close()
 
     return pass_path, group_path
 
@@ -36,8 +34,12 @@ def load_paths():
 # This method take in the path of passwd file and return a object containing info of all users
 def load_passwd(pass_path):
     # Load the list pf user string from passwd file
-    with open(pass_path, "r") as passwd_file:
-        raw_users = passwd_file.readlines()
+    try:
+        with open(pass_path, "r") as passwd_file:
+            raw_users = passwd_file.readlines()
+    except IOError:
+        print("passwd file is missing or malformed! See README for example of config.txt")
+        return None
 
     # Go through the list of user string and parse them into a object
     users = []
@@ -54,8 +56,12 @@ def load_passwd(pass_path):
 # This method take in the path of group file and return a object containing info of all groups
 def load_group(group_path):
     # Load the list pf user string from passwd file
-    with open(group_path, "r") as group_file:
-        raw_groups = group_file.readlines()
+    try:
+        with open(group_path, "r") as group_file:
+            raw_groups = group_file.readlines()
+    except IOError:
+        print("group file is missing or malformed! See README for example of config.txt")
+        return None
 
     # Go through the list of user string and parse them into a object
     groups = []
@@ -142,13 +148,3 @@ def search_groups(groups, name=None, gid=None, members=None):
         result.append(group)
 
     return result
-'''
-pass_path, group_path = load_paths()
-
-users = load_passwd(pass_path)
-groups = load_group(group_path)
-list1 = search_groups(groups, gid=21, members=["azureuser"])
-
-print(list1)
-'''
-
