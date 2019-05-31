@@ -16,7 +16,7 @@ Example Response:
 “/home/dwoodlins”, “shell”: “/bin/false”}
 ]
 
-###GET /users/query[?name=\<nq>][&uid=\<uq>][&gid=\<gq>][&comment=\<cq>][&home=\<hq>][&shell=\<sq>]
+### GET /users/query[?name=\<nq>][&uid=\<uq>][&gid=\<gq>][&comment=\<cq>][&home=\<hq>][&shell=\<sq>]
 
 Return a list of users matching all of the specified query fields. The bracket notation indicates that any of the
 following query parameters may be supplied:
@@ -38,7 +38,7 @@ Example Response:
 “/home/dwoodlins”, “shell”: “/bin/false”}
 ]
 
-###GET /users/\<uid>
+### GET /users/\<uid>
 
 Return a single user with <uid>. Return 404 if <uid> is not found.
 
@@ -47,7 +47,7 @@ Example Response:
 {“name”: “dwoodlins”, “uid”: 1001, “gid”: 1001, “comment”: “”, “home”:
 “/home/dwoodlins”, “shell”: “/bin/false”}
 
-###GET /users/\<uid>/groups
+### GET /users/\<uid>/groups
 
 Return all the groups for a given user.
 
@@ -57,7 +57,7 @@ Example Response:
 {“name”: “docker”, “gid”: 1002, “members”: [“dwoodlins”]}
 ]
 
-###GET /groups
+### GET /groups
 
 Return a list of all groups on the system, a defined by /etc/group.
 
@@ -69,7 +69,7 @@ Example Response:
 {“name”: “docker”, “gid”: 1002, “members”: []}
 ]
 
-###GET /groups/query[?name=<nq>][&gid=\<gq>][&member=\<mq1>[&member=\<mq2>][&.
+### GET /groups/query[?name=<nq>][&gid=\<gq>][&member=\<mq1>[&member=\<mq2>][&.
 ..]]
 
 Return a list of groups matching all of the specified query fields. The bracket notation indicates that any of the
@@ -90,7 +90,7 @@ Example Response:
 [“_analyticsd’,”_networkd”,”_timed”]}
 ]
 
-###GET /groups/\<gid>
+### GET /groups/\<gid>
 
 Return a single group with <gid>. Return 404 if <gid> is not found.
 
@@ -98,14 +98,14 @@ Example Response:
 
 {“name”: “docker”, “gid”: 1002, “members”: [“dwoodlins”]}
 
-#File Structure
-###app.py
+# File Structure
+### app.py
 Contain the web app framework code and http routes
 
-###service.py
+### service.py
 Contain methods for accessing, parsing, and searching the passwd/group files
 
-###config.txt
+### config.txt
 This file specifies the location of the passwd file and the group file
 
 Example:
@@ -116,14 +116,14 @@ Example:
 /etc/group
 '''
 
-###requirements.txt
+### requirements.txt
 Contain Python packages needed to run this app
 #How to run
 
 ## Prerequisite
 Make sure you have Python 3 and PIP working
 
-##Set up
+## Set up
 1. Download the codes or clone the repo to your machine
 2. In the directory, run this command to install the packages needed
 '''
@@ -132,14 +132,14 @@ pip install -r requirements.txt
 3. Make sure the paths in config.txt is pointing to the passwd and group file in your system
 The first line is for passwd, and the second line is for group
 
-##Run
-###For local testing, run 
+## Run
+### For local testing, run 
 '''
 flask run
 ''' 
 
 use http://localhost:5000 on local browser to access the service
-###For production 
+### For production 
 '''
 flask run --host=0.0.0.0 --port=$PORT
 ''' 
