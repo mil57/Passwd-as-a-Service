@@ -1,2 +1,2 @@
-/etc/passwd
-/etc/group
+passwd
+group
