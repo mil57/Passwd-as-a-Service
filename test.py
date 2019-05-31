@@ -2,8 +2,8 @@ import unittest
 from  service import *
 
 # Test Paths
-PASS_PATH = "passwd"
-GROUP_PATH = "group"
+PASS_PATH = "./test/passwd"
+GROUP_PATH = "./test/group"
 
 # Test Results
 TEST_USERS = [{'name': 'root', 'uid': 0, 'gid': 0, 'comment': 'root', 'home': '/root', 'shell': '/bin/bash'},

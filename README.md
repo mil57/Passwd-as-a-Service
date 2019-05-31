@@ -114,6 +114,14 @@ Example:
 /etc/group
 ```
 
+### test.py
+This file contain unit test for methods in service.py, to run the tests, use
+```
+python -m unittest test
+```
+### /test
+This folder contains test files needed for the unit test
+
 ### requirements.txt
 Contain Python packages needed to run this app
 
