@@ -69,8 +69,7 @@ Example Response:
 {“name”: “docker”, “gid”: 1002, “members”: []}
 ]
 
-### GET /groups/query[?name=<nq>][&gid=\<gq>][&member=\<mq1>[&member=\<mq2>][&.
-..]]
+### GET /groups/query[?name=<nq>][&gid=\<gq>][&member=\<mq1>[&member=\<mq2>][&...]]
 
 Return a list of groups matching all of the specified query fields. The bracket notation indicates that any of the
 following query parameters may be supplied:
@@ -110,11 +109,11 @@ This file specifies the location of the passwd file and the group file
 
 Example:
 
-'''
+```
 /etc/passwd
 
 /etc/group
-'''
+```
 
 ### requirements.txt
 Contain Python packages needed to run this app
@@ -126,23 +125,23 @@ Make sure you have Python 3 and PIP working
 ## Set up
 1. Download the codes or clone the repo to your machine
 2. In the directory, run this command to install the packages needed
-'''
+```
 pip install -r requirements.txt
-'''
+```
 3. Make sure the paths in config.txt is pointing to the passwd and group file in your system
 The first line is for passwd, and the second line is for group
 
 ## Run
 ### For local testing, run 
-'''
+```
 flask run
-''' 
+``` 
 
 use http://localhost:5000 on local browser to access the service
 ### For production 
-'''
+```
 flask run --host=0.0.0.0 --port=$PORT
-''' 
+``` 
 
 $PORT should be replace with a port number meant for hosting web service
 
